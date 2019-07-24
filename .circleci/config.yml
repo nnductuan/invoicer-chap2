@@ -13,8 +13,6 @@ jobs:
    - run: 
       name: Setup environment
       command: |
-       export DOCKER_USER='nnductuan'
-       export DOCKER_PASS='Tuan0909954189'
        gb="/src/github.com/${CIRCLE_PROJECT_USERNAME}";
        if [ ${CIRCLE_PROJECT_USERNAME} == 'Securing-DevOps' ]; then
          dr="securingdevops"
