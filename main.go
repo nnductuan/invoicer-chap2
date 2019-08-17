@@ -234,7 +234,7 @@ func getHeartbeat(w http.ResponseWriter, r *http.Request) {
 }
 
 func tuan(w http.ResponseWriter, r *http.Request) {
-  w.Write([]byte("Hello Tuan"))
+  w.Write([]byte("Hello Tuan version 1"))
 }
 
 // handleVersion returns the current version of the API
