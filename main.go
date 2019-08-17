@@ -72,7 +72,7 @@ func main() {
 	r.HandleFunc("/invoice/{id:[0-9]+}", iv.deleteInvoice).Methods("DELETE")
 	r.HandleFunc("/invoice/delete/{id:[0-9]+}", iv.deleteInvoice).Methods("GET")
 	r.HandleFunc("/__version__", getVersion).Methods("GET")
-
+	r.HandleFunc("/tuan", tuan).Methods("GET")
 	// handle static files
 	r.Handle("/statics/{staticfile}",
 		http.StripPrefix("/statics/", http.FileServer(http.Dir("./statics"))),
@@ -231,6 +231,10 @@ func (iv *invoicer) getIndex(w http.ResponseWriter, r *http.Request) {
 
 func getHeartbeat(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("I am alive"))
+}
+
+func tuan(w http.ResponseWriter, r *http.Request) {
+  w.Write([]byte("Hello Tuan"))
 }
 
 // handleVersion returns the current version of the API
